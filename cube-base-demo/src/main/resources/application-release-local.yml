@@ -1,0 +1,83 @@
+server:
+  port: 8081
+  undertow:
+    eager-filter-init: true
+    threads:
+      worker: 4
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+  devtools:
+    restart:
+      enabled: false
+      additional-paths: src/main/java
+  application:
+    name: new-retail
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: "com.mysql.cj.jdbc.Driver"
+    jdbc-url: "jdbc:mysql://127.0.0.1:3306/developer?useSSL=true&autoReconnect=true&useUnicode=true&zeroDateTimeBehavior=round&allowMultiQueries=true&serverTimezone=Asia/Shanghai"
+    username: "developer"
+    password: "developer"
+    connection-test-query: SELECT 1
+    connection-init-sql: set names utf8mb4
+    max-lifetime: 60000
+    idle-timeout: 60000
+    minimum-idle: 10
+    maximum-pool-size: 20
+    auto-commit: true
+    validation-timeout: 5000
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  servlet:
+    multipart:
+      maxFileSize: 10240
+      maxRequestSize: 10240
+  redis:
+    database: "1"
+    host-name: "123.56.161.102"
+    port: "6379"
+    password: "study@2017"
+    timeout: 5000
+    jedis:
+      pool:
+        max-active: 20
+        max-wait: -1
+        max-idle: 10
+        min-idle: 10
+        time-between-eviction-runs: 60000
+
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+  main:
+    lazy-initialization: false
+  profiles:
+    active: testing
+
+log:
+  file:
+    path: "/home/data/log/media"
+    name: "media"
+
+ok:
+  http:
+    connect-timeout: 60
+    read-timeout: 60
+    write-timeout: 60
+    max-idle-connections: 200
+    keep-alive-duration: 300
+
+
+
+
+

@@ -1,0 +1,21 @@
+.showpic {
+    font-size: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: 999;
+    text-align: center;
+}
+.showpic span {
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.showpic img {
+    vertical-align: middle;
+    z-index: 999;
+    max-width: 50%;
+    display: inline-block;
+}
