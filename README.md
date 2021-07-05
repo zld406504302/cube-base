@@ -302,7 +302,7 @@
     ````
     private static final Logger logger = LoggerUtils.getLogger(WxApiUtil.class);
     ````
-* 异常洗洗不可以直接print到控制台
+* 异常信息不可以直接print到控制台
   + 错误示例：
     ```
     catch (IOException e) {
